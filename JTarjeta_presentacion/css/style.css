@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Antes 215 lineas */
+
+body{
+    min-height: 100vh;
+    background-color: var(--color-negroindustrial);
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.contenedor{
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/*PRIMER BLOQUE --ENCABEZADO-- */
+.encabezado{
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    position: relative;
+    text-align: center;
+    border-radius: 15px 15px 50% 50%;
+}
+
+.foto img{
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transform: 0.9s;
+    transform-origin: top;
+    left: 50%;
+    bottom: -35px;
+
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.electricida{
+    color: var(--color-blancoelectrico);
+}
+
+.industrial{
+    color: var(--color-azulelectrico);
+}
+
+.nombres-apellidos{
+    color: var(--color-grisazulado); 
+}
+
+
+/*SEGUNDO BLOQUE -- GALERIA -- */
+.galeria{
+    margin-top: 1rem;
+    gap: 10px;
+    border-radius: 15px;
+}
+
+.imagen{
+    width: 14vw;
+    height: 35vh;
+    flex: 1;
+    filter: brightness(0.1);
+}
+
+.imagen.activa{
+    flex: 8;
+    filter: brightness(1);
+}
+
+.imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top: none;
+    border-radius: 10px;
+}
+
+/*TERCER BLOQUE -- SERVICIOS QUE REALIZO -- */
+.servicios{
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0.3rem;
+    border-radius: 15px 15px 25% 2%;
+}
+
+.servicio{
+    width: 5.5rem;
+    height: 80px;
+    margin: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 11px;
+    color: var(--color-blancoelectrico);
+    border-radius: 10px;
+}
+
+.servicio img{
+    width: 3rem;
+    height: 3rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-grisazulado);
+}
+
+/*CUARTO BLOQUE -- CONTACTOS -- */
+.botones{
+    gap: 2rem;
+    padding: 0.7rem;
+    border-radius: 10px;
+    border-top: none;
+}
+
+.icono img{
+    width: 50px;
+    height: 50px;
+    transition: 0.4s;
+}
+
+.icono img:hover{
+    transform: scale(1.5);
+}
+
+.icono img:active{
+    transform: scale(0.9);
+}
+
+/* ANIMACIONES */ 
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icono img{
+    animation: aparecer 1s ease;
+}

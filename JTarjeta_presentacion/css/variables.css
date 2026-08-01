@@ -1,0 +1,32 @@
+:root{
+    /*Variables para encajonar*/ 
+    --borde-debug: 2px dashed var(--color-amarillodebug);
+
+    /*Variables de configuracion general*/
+    /*No esta en uso*/
+    --fondo-principal: url("/../assets/fondos/fondo.png");
+
+    /*Ancho de los bloques*/
+    --ancho-predefinido: clamp(350px, 90vw, 800px);
+}
+
+/*Se encarga de centrar los bloques desde html*/
+.display-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Se encarga de dar formato a los bloques principales*/
+.formato-bloques{
+    width: var(--ancho-predefinido);
+    background-color: var(--color-griscarbon);
+    border: 1px solid var(--color-azultransparente);
+    border-top: none;
+    box-shadow: 0 2px 15px var(--color-negro);
+}
+
+.sombras{
+    border: 1px solid var(--color-azultransparente);
+    box-shadow: 0px 08px 10px var(--color-azulenergia);
+}

@@ -1,0 +1,33 @@
+:root{
+    /*PALETA DE COLORES*/
+    --color-negroindustrial: rgba(10, 12, 16, 1);
+    --color-negro: rgba(0, 0, 0, 0.65);
+    
+    --color-griscarbon: rgba(25, 30, 38, 0.55);
+
+
+    --color-azulfuerte: rgba(0, 120, 255, 0.85);
+    --color-azulenergia: rgba(0, 170, 255, 0.35);
+    --color-azulelectrico: rgba(0, 180, 255, 1);
+    --color-azultransparente: rgba(0, 170, 255, 0.25);
+
+    --color-blancoelectrico: rgba(245, 248, 255, 1);
+
+    --color-grisazulado: rgba(180, 195, 210, 1);
+    --color-grisclaro: rgba(220, 225, 230, 1);
+    --gris-suave: rgba(190, 198, 208, 0.36);
+
+    --color-amarilloelectrico: rgba(255, 190, 0, 1);
+    
+    --color-rojoindustrial: rgba(230, 40, 40, 1);
+
+
+    /*COLORES DE BOTONES*/ 
+    --color-whatsapp: rgba(37, 211, 102, 0.9);
+    --color-telefono: rgba(80, 170, 255, 0.9);
+    --color-portafolio: rgba(220, 38, 38, 1);
+
+        /* ===== DEPURACION =====*/
+    --color-amarillodebug: rgba(184, 158, 28, 0.9);
+}
+
