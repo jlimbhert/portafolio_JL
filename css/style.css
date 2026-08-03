@@ -29,15 +29,12 @@ body{
 .foto img{
     width: 90px;
     height: 90px;
-
     border-radius: 50%;
     position: absolute;
     transform: translateX(-50%);
-    transform: 0.9s;
     transform-origin: top;
     left: 50%;
     bottom: -35px;
-
     border-top: none;
     border-left: none;
     border-right: none;
@@ -67,7 +64,7 @@ body{
     width: 14vw;
     height: 35vh;
     flex: 1;
-    filter: brightness(0.1);
+    filter: brightness(0.5);
 }
 
 .imagen.activa{
@@ -88,7 +85,7 @@ body{
     gap: 10px;
     flex-wrap: wrap;
     padding: 0.3rem;
-    border-radius: 15px 15px 25% 2%;
+    border-radius: 15px;
 }
 
 .servicio{
@@ -121,30 +118,8 @@ body{
 .icono img{
     width: 50px;
     height: 50px;
-    transition: 0.4s;
 }
 
 .icono img:hover{
-    transform: scale(1.5);
-}
-
-.icono img:active{
-    transform: scale(0.9);
-}
-
-/* ANIMACIONES */ 
-@keyframes aparecer{
-    from{
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.icono img{
-    animation: aparecer 1s ease;
+    animation: flotar 0.5s;
 }
