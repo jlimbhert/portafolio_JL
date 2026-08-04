@@ -24,6 +24,7 @@ body{
     position: relative;
     text-align: center;
     border-radius: 15px 15px 50% 50%;
+    animation: entrada-arriba 2s;
 }
 
 .foto img{
@@ -42,22 +43,25 @@ body{
 
 .electricida{
     color: var(--color-blancoelectrico);
+    animation: aparecer 5s;
 }
 
 .industrial{
     color: var(--color-azulelectrico);
+    animation: aparecer 5s;
 }
 
 .nombres-apellidos{
     color: var(--color-grisazulado); 
+    animation: aparecer 6s;
 }
-
 
 /*SEGUNDO BLOQUE -- GALERIA -- */
 .galeria{
     margin-top: 1rem;
     gap: 10px;
-    border-radius: 15px;
+    border-radius: 10px;
+    animation: aparecer 5s 1s both;
 }
 
 .imagen{
@@ -86,6 +90,7 @@ body{
     flex-wrap: wrap;
     padding: 0.3rem;
     border-radius: 15px;
+    animation: aparecer 6s 1s both;
 }
 
 .servicio{
@@ -93,7 +98,7 @@ body{
     height: 80px;
     margin: 10px;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom:1.5rem;
     text-align: center;
     font-size: 11px;
     color: var(--color-blancoelectrico);
@@ -113,6 +118,7 @@ body{
     padding: 0.7rem;
     border-radius: 10px;
     border-top: none;
+    animation: aparecer 1s 2s both;
 }
 
 .icono img{
@@ -120,6 +126,15 @@ body{
     height: 50px;
 }
 
-.icono img:hover{
-    animation: flotar 0.5s;
+.icono:nth-child(1){
+    animation: aparecer 1s 2.5s both;
+}
+.icono:nth-child(2){
+    animation: aparecer 1s 3s both;
+}
+.icono:nth-child(3){
+    animation: aparecer 1s 3.5s both;
+}
+.icono:nth-child(4){
+    animation: aparecer 1s 4s both;
 }
