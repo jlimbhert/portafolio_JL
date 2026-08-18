@@ -1,6 +1,7 @@
 :root{
     /*PALETA DE COLORES*/
     --color-negroindustrial: rgba(10, 12, 16, 1);
+    --color-negroindustrialfondo: rgba(10, 12, 16, 0.55);
     --color-negro: rgba(0, 0, 0, 0.65);
     
     --color-griscarbon: rgba(25, 30, 38, 0.55);
