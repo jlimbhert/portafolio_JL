@@ -74,16 +74,18 @@ body{
 
 /* ---------- Botón principal ---------- */
 .boton-whatsapp{
+    border-color: var(--color-whatsapp);
     background-color: rgba(37, 211, 102, 0.15);
     box-shadow: 0 0 16px rgba(37, 211, 102, 0.25);
 }
 
-
-/* ---------- Barra de contacto: más opaca para que no se transparente el contenido ---------- */
-.botones{
-    background-color: rgba(10, 12, 16, 0.92);
-    backdrop-filter: blur(8px);
+.boton-llamar{
+    border-color: var(--color-telefono);
+    background-color: rgba(80, 170, 255, 0.15);
+    box-shadow: 0 0 16px rgba(80, 170, 255, 0.25);
 }
+
+
 
 
 /* ---------- Accesibilidad ---------- */
