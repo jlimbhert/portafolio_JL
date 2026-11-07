@@ -1,0 +1,101 @@
+/* =========================================================
+   TEMA ELECTRICISTA
+   Aquí va todo lo que hace que la tarjeta "se vea" eléctrica.
+   Si algún día quieres cambiar el estilo, solo tocas este archivo.
+   ========================================================= */
+
+/* ---------- Fondo tipo plano técnico + resplandor azul ---------- */
+body{
+    background-color: var(--color-negroindustrial);
+    background-image:
+        radial-gradient(circle at 50% 0%, rgba(0, 170, 255, 0.18), transparent 55%),
+        linear-gradient(rgba(0, 170, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 170, 255, 0.06) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    background-attachment: fixed;
+}
+
+
+/* ---------- Cinta de seguridad industrial (lo que más se nota) ---------- */
+.encabezado::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    border-radius: 15px 15px 0 0;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--color-amarilloelectrico) 0 10px,
+        var(--color-negroindustrial) 10px 20px
+    );
+}
+
+
+/* ---------- Rayo ---------- */
+.rayo{
+    fill: var(--color-amarilloelectrico);
+    filter: drop-shadow(0 0 6px var(--color-amarilloelectrico));
+}
+
+
+/* ---------- Brillos de texto ---------- */
+.industrial{
+    text-shadow: 0 0 14px var(--color-azulenergia);
+}
+
+.galeria-titulo,
+.nuevo-proyecto h2{
+    text-shadow: 0 0 10px var(--color-azulenergia);
+}
+
+.titulo{
+    background: linear-gradient(to top, rgba(10, 12, 16, 0.95), transparent);
+    text-shadow: 0 2px 4px var(--color-negro);
+}
+
+
+/* ---------- Fichas de trabajo ---------- */
+.ficha{
+    box-shadow: 0 0 0 1px var(--color-azultransparente), 0 4px 14px var(--color-negro);
+    transition: border-color 0.2s ease;
+}
+
+.trabajo:not(.activa) .ficha:active{
+    border-color: var(--color-azulelectrico);
+}
+
+.trabajo.activa .ficha{
+    border-color: var(--color-azulelectrico);
+    box-shadow: 0 0 30px var(--color-azulenergia);
+}
+
+
+/* ---------- Botón principal ---------- */
+.boton-whatsapp{
+    background-color: rgba(37, 211, 102, 0.15);
+    box-shadow: 0 0 16px rgba(37, 211, 102, 0.25);
+}
+
+
+/* ---------- Barra de contacto: más opaca para que no se transparente el contenido ---------- */
+.botones{
+    background-color: rgba(10, 12, 16, 0.92);
+    backdrop-filter: blur(8px);
+}
+
+
+/* ---------- Accesibilidad ---------- */
+a:focus-visible,
+button:focus-visible{
+    outline: 2px solid var(--color-amarilloelectrico);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation: none !important;
+        transition: none !important;
+    }
+}
