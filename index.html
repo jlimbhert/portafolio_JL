@@ -3,133 +3,137 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JLimbhert tarjeta de presentación</title>
+        <meta name="theme-color" content="#0a0c10">
+        <title>Jhonatan Valdiviezo | Electricista Industrial</title>
+
+        <!-- Vista previa al compartir el link en WhatsApp/Telegram -->
+        <meta name="description" content="Electricista industrial. Mira mis trabajos y contáctame por WhatsApp.">
+        <meta property="og:title" content="Jhonatan Valdiviezo | Electricista Industrial">
+        <meta property="og:description" content="Mira mis trabajos y contáctame por WhatsApp.">
+        <!-- Cuando tengas tu link de GitHub Pages, activa esta línea con tu link real:
+        <meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPO/assets/foto_perfil/foto-perfil.jpg">
+        -->
+
         <link rel="stylesheet" href="css/animaciones.css">
         <link rel="stylesheet" href="css/colores.css">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/temas.css">
     </head>
 
     <body class="display-center">
         <main class="contenedor display-center">
 
+            <!-- ========== 1. ENCABEZADO ========== -->
             <header class="encabezado formato-bloques sombras">
+                <svg class="rayo" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13 2 4 14h6l-1 8 9-12h-6z"/>
+                </svg>
                 <h1 class="profesion">
-                    <span class="electricida">Eléctricista</span>
+                    <span class="electricista">Electricista</span>
                     <span class="industrial">Industrial</span>
                 </h1>
                 <h2 class="nombres-apellidos">Jhonatan L. Valdiviezo O.</h2>
+                <p class="especialidad">Instalaciones y mantenimiento eléctrico</p>
                 <div class="foto">
-                    <img class="sombras" src="assets/foto_perfil/foto-perfil.jpg" alt="foto del profesional">
+                    <img class="sombras" src="assets/foto_perfil/foto-perfil.jpg" alt="Foto del electricista">
                 </div>
             </header>
 
+            <!-- ========== 2. GALERÍA ========== -->
             <section class="galeria formato-bloques sombras display-center">
-                <p>TRABAJOS REALIZADOS</p>
+                <h2 class="galeria-titulo">TRABAJOS REALIZADOS</h2>
 
-                <div class="trabajo display-center">
-                    <div class="carrusel">
-                        <div class="imagen">
-                            <img src="/assets/galeria/img1.jpg" alt="Primer trabajo">
+                <!-- Cada .trabajo = un trabajo. Cada .imagen = una foto de ese trabajo.
+                     Si no tienes una foto, borra su bloque <div class="imagen"> completo.
+                     Cambia el texto de <p class="titulo"> por lo que hiciste. -->
+
+                <div class="trabajo">
+                    <div class="ficha">
+                        <div class="carrusel">
+                            <div class="imagen"><img src="assets/galeria/trabajo1-1.jpg" alt="Trabajo 1, foto 1"></div>
+                            <div class="imagen"><img src="assets/galeria/trabajo1-2.jpg" alt="Trabajo 1, foto 2"></div>
                         </div>
-                        <div class="imagen">
-                            <img src="/assets/galeria/img2.jpg" alt="Primer trabajo">
-                        </div>
-                        <div class="imagen">
-                            <img src="/assets/galeria/img3.jpeg"alt="Primer trabajo">
-                        </div>
+                        <p class="titulo">Trabajo 1</p>
                     </div>
-                    <p class="display-center">Primer trabajo</p>
                 </div>
 
-                <div class="trabajo display-center">
-                    <div class="carrusel">
-                        <div class="imagen">
-                            <img src="/assets/galeria/img2.jpg"alt="Segundo trabajo">
+                <div class="trabajo">
+                    <div class="ficha">
+                        <div class="carrusel">
+                            <div class="imagen"><img src="assets/galeria/trabajo2-1.jpg" alt="Trabajo 2, foto 1"></div>
+                            <div class="imagen"><img src="assets/galeria/trabajo2-2.jpg" alt="Trabajo 2, foto 2"></div>
                         </div>
-                        <div class="imagen">
-                            <img src=""alt="Segundo trabajo">
-                        </div>
-                        <div class="imagen">
-                            <img src=""alt="Segundo trabajo">
-                        </div>
+                        <p class="titulo">Trabajo 2</p>
                     </div>
-                    <p class="display-center">Segundo trabajo</p>
                 </div>
 
-                <div class="trabajo display-center">
-                    <div class="carrusel">
-                        <div class="imagen">
-                            <img src="/assets/galeria/img3.jpeg"alt="Tercer trabajo">
+                <div class="trabajo">
+                    <div class="ficha">
+                        <div class="carrusel">
+                            <div class="imagen"><img src="assets/galeria/trabajo3-1.jpg" alt="Trabajo 3, foto 1"></div>
+                            <div class="imagen"><img src="assets/galeria/trabajo3-2.jpg" alt="Trabajo 3, foto 2"></div>
                         </div>
-                        <div class="imagen">
-                            <img src=""alt="Tercer trabajo">
-                        </div>
-                        <div class="imagen">
-                            <img src=""alt="Tercer trabajo">
-                        </div>
+                        <p class="titulo">Trabajo 3</p>
                     </div>
-                    <p class="display-center">Tercer trabajo</p>
                 </div>
 
-                <div class="trabajo display-center">
-                    <div class="carrusel">
-                        <div class="imagen">
-                            <img src="/assets/galeria/img4.jpg"alt="Cuarto trabajo">
+                <div class="trabajo">
+                    <div class="ficha">
+                        <div class="carrusel">
+                            <div class="imagen"><img src="assets/galeria/trabajo4-1.jpg" alt="Trabajo 4, foto 1"></div>
+                            <div class="imagen"><img src="assets/galeria/trabajo4-2.jpg" alt="Trabajo 4, foto 2"></div>
                         </div>
-                        <div class="imagen">
-                            <img src=""alt="Cuarto trabajo">
-                        </div>
-                        <div class="imagen">
-                            <img src=""alt="Cuarto trabajo">
-                        </div>
+                        <p class="titulo">Trabajo 4</p>
                     </div>
-                    <p class="display-center">Cuarto trabajo</p>
                 </div>
 
-                <div class="trabajo display-center">
-                    <div class="carrusel">
-                        <div class="imagen">
-                            <img src="/assets/galeria/img3.webp"alt="Quinto trabajo">
+                <div class="trabajo">
+                    <div class="ficha">
+                        <div class="carrusel">
+                            <div class="imagen"><img src="assets/galeria/trabajo5-1.jpg" alt="Trabajo 5, foto 1"></div>
+                            <div class="imagen"><img src="assets/galeria/trabajo5-2.jpg" alt="Trabajo 5, foto 2"></div>
                         </div>
-                        <div class="imagen">
-                            <img src=""alt="Quinto trabajo">
-                        </div>
-                        <div class="imagen">
-                            <img src=""alt="Quinto trabajo">
-                        </div>
+                        <p class="titulo">Trabajo 5</p>
                     </div>
-                    <p class="display-center">Quinto trabajo</p>
                 </div>
             </section>
 
+            <!-- ========== 3. INVITACIÓN ========== -->
             <section class="nuevo-proyecto">
                 <h2>¿Tienes un proyecto en mente?</h2>
                 <p>
-                    Si necesitas realizar un trabajo eléctrico escríbreme.
-                    Cuéntame qué necesitas y conversar sobre tu proyecto.
+                    Si necesitas un trabajo eléctrico, escríbeme.
+                    Cuéntame qué necesitas y conversemos sobre tu proyecto.
                 </p>
-                <a class="boton-whatsapp" href="https://wa.me/51951584793">
-                <img class="whatsapp" src="assets/icons/whatsapp.svg" alt="whatsapp">
-                Consultar por Whatsapp
+                <a class="boton-whatsapp" target="_blank" rel="noopener"
+                   href="https://wa.me/51951584793?text=Hola%2C%20vi%20tu%20tarjeta%20y%20quiero%20consultar%20por%20un%20trabajo%20el%C3%A9ctrico">
+                    <img src="assets/icons/whatsapp.svg" alt="">
+                    Consultar por WhatsApp
                 </a>
             </section>
         </main>
 
+        <!-- ========== 4. CONTACTOS (barra fija abajo) ========== -->
         <footer class="botones formato-bloques display-center sombras">
-            <a class="icono display-center" href="https://wa.me/51951584793" aria-label="Whatsapp">
-                <img class="whatsapp" src="assets/icons/whatsapp.svg" alt="whatsapp">
+            <a class="icono display-center" target="_blank" rel="noopener"
+               href="https://wa.me/51951584793" aria-label="Escribir por WhatsApp">
+                <img src="assets/icons/whatsapp.svg" alt="">
             </a>
-            <a class="icono display-center" href="tel:+51951584793" aria-label="Whatsapp">
-                <img class="telefono" src="assets/icons/phone.svg" alt="phone">
+            <a class="icono display-center" href="tel:+51951584793" aria-label="Llamar por teléfono">
+                <img src="assets/icons/phone.svg" alt="">
             </a>
-            <a class="icono display-center" href="#" aria-label="Whatsapp">
-                <img class="linkedin" src="assets/icons/linkedin.svg" alt="linkedin">
+
+            <!-- Activa estos dos cuando tengas los links reales:
+            <a class="icono display-center" href="TU-LINK-DE-LINKEDIN" aria-label="LinkedIn">
+                <img src="assets/icons/linkedin.svg" alt="">
             </a>
-            <a class="icono display-center" href="#" aria-label="Whatsapp">
-                <img class="portafolio" src="assets/icons/portafolio.svg" alt="portafolio">
+            <a class="icono display-center" href="TU-LINK-DE-PORTAFOLIO" aria-label="Portafolio">
+                <img src="assets/icons/portafolio.svg" alt="">
             </a>
+            -->
         </footer>
+
         <script src="js/script.js"></script>
     </body>
 </html>
