@@ -1,13 +1,24 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     min-height: 100vh;
-    background-color: var(--color-negroindustrial);
+    min-height: 100dvh;
+    font-family: "Trebuchet MS", sans-serif;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
+}
+
+/* Cuando hay un trabajo abierto, la página de atrás no se desplaza */
+body.modal-abierto{
+    overflow: hidden;
 }
 
 .contenedor{
@@ -15,33 +26,36 @@ body{
     gap: 3rem;
 }
 
+
 /* =========================================================
    PRIMER BLOQUE -- ENCABEZADO
    ========================================================= */
 
 .encabezado{
-    padding-top: 1rem;
-    padding-bottom: 4rem;
+    padding: 1.5rem 1rem 4rem;
     position: relative;
     text-align: center;
     border-radius: 15px 15px 50% 50%;
 }
 
-.foto img{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    position: absolute;
-    transform: translateX(-50%);
-    transform-origin: top;
-    left: 50%;
-    bottom: -35px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+.rayo{
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.3rem;
 }
 
-.electricida{
+.profesion{
+    font-size: 32px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profesion span{
+    display: block;
+}
+
+.electricista{
     color: var(--color-blancoelectrico);
 }
 
@@ -50,7 +64,29 @@ body{
 }
 
 .nombres-apellidos{
+    margin-top: 0.6rem;
+    font-size: 17px;
+    font-weight: 400;
     color: var(--color-grisazulado);
+}
+
+.especialidad{
+    margin-top: 0.2rem;
+    font-size: 14px;
+    color: var(--gris-suave);
+}
+
+.foto img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
+    transform: translateX(-50%);
+    border: 3px solid var(--color-azulelectrico);
+    background-color: var(--color-negroindustrial);
 }
 
 
@@ -60,62 +96,76 @@ body{
 
 .galeria{
     margin-top: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    gap: 10px;
+    padding: 2rem 0 1rem;
+    gap: 14px;
     flex-direction: column;
     position: relative;
     border-radius: 15px;
 }
 
-.galeria > p{
-    font-family: "Trebuchet MS", sans-serif;
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--color-azulelectrico);
-    text-shadow: 0 2px 4px var(--color-grisazulado);
+.galeria-titulo{
     position: absolute;
-    transform-origin: top;
     top: 0;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.2rem 0.9rem;
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-azulelectrico);
+    background-color: var(--color-negroindustrial);
+    border: 1px solid var(--color-azultransparente);
+    border-radius: 20px;
 }
 
 
 /* -------------------------
-   TRABAJO
+   TRABAJO (el espacio en la lista; no se mueve al abrir)
    ------------------------- */
 
 .trabajo{
     width: 95%;
-    height: 100px;
-    gap: 10px;
-    position: relative;
-    border: 1px solid var(--color-grisazulado);
-    border-radius: 12px;
-}
-
-.trabajo p{
-    position: absolute;
-    width: 97%;
-    height: 90px;
-    font-family: "Trebuchet MS", sans-serif;
-    font-weight: 700;
-    color: var(--color-grisazulado);
-    font-size: 30px;
-    text-shadow: 0 2px 4px var(--color-azulfuerte);
-    border-radius: 12px;
-    text-align: center;
-    background: var(--color-negroindustrialfondo);
-    backdrop-filter: blur(3px);
+    height: 200px;
 }
 
 
 /* -------------------------
-   TÍTULO CUANDO ESTÁ ABIERTO
+   FICHA (la tarjeta que se ve y que se abre)
    ------------------------- */
 
-.trabajo.activa p{
+.ficha{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--color-grisazulado);
+    border-radius: 12px;
+    background-color: var(--color-negroindustrial);
+}
+
+.titulo{
+    position: absolute;
+    left: 0;
+    right: 0;
     bottom: 0;
+    z-index: 15;
+    padding: 2.5rem 0.8rem 0.7rem;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-blancoelectrico);
+    pointer-events: none;
+}
+
+/* Pista de que se puede tocar */
+.trabajo:not(.activa) .titulo::after{
+    content: "Toca para ver fotos";
+    display: block;
+    margin-top: 0.1rem;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-azulelectrico);
 }
 
 
@@ -129,48 +179,21 @@ body{
 }
 
 .imagen img{
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
 
-
-/* -------------------------
-   TRABAJO CERRADO
-   Solo se muestra la primera foto
-   ------------------------- */
-
+/* Cerrado: solo se ve la primera foto */
 .trabajo .imagen:not(:first-child){
     display: none;
 }
 
-
-/* -------------------------
-   TRABAJO ABIERTO
-   Aparecen todas las fotos
-   ------------------------- */
-
+/* Abierto: aparecen todas */
 .trabajo.activa .imagen:not(:first-child){
     display: block;
-}
-
-
-/* -------------------------
-   TRABAJO ABIERTO
-   ------------------------- */
-
-.trabajo.activa{
-    position: fixed;
-    width: 89vw;
-    height: 60vh;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    background-color: var(--color-negroindustrial);
 }
 
 
@@ -194,32 +217,87 @@ body{
 
 
 /* -------------------------
-   FOTOS DEL CARRUSEL
+   TRABAJO ABIERTO (ventana al centro de la pantalla)
    ------------------------- */
 
+.trabajo.activa .ficha{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: min(92vw, 460px);
+    height: min(78vh, 720px);
+    height: min(78dvh, 720px);
+    cursor: default;
+    animation: aparecer 0.25s ease;
+}
+
+.trabajo.activa .carrusel{
+    gap: 10px;
+    padding: 1rem 12%;
+}
+
+/* Cada foto ocupa todo el ancho útil; las vecinas asoman a los lados */
 .trabajo.activa .carrusel .imagen{
-    flex: 0 0 70%;
-    opacity: 0.65;
-    transform: scale(0.8);
+    flex: 0 0 100%;
+    opacity: 0.6;
+    transform: scale(0.88);
     transition: transform 0.3s ease, opacity 0.3s ease;
     scroll-snap-align: center;
-    position: relative;
+}
+
+/* Foto protagonista */
+.trabajo.activa .carrusel .imagen.foto-activa{
+    opacity: 1;
+    transform: scale(1);
 }
 
 
 /* -------------------------
-   FOTO PROTAGONISTA
+   BOTÓN CERRAR Y FONDO OSCURO
    ------------------------- */
 
-.trabajo.activa .carrusel .imagen.foto-activa{
-    opacity: 1;
-    transform: scale(1.05);
-    z-index: 10;
+.cerrar{
+    display: none;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    z-index: 20;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--color-blancoelectrico);
+    background-color: var(--color-negroindustrial);
+    border: 1px solid var(--color-grisazulado);
+    border-radius: 50%;
 }
+
+.trabajo.activa .cerrar{
+    display: flex;
+}
+
+.fondo-modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
+}
+
+body.modal-abierto .fondo-modal{
+    display: block;
+}
+
 
 /* =========================================================
    TERCER BLOQUE -- INVITACION A NUEVO PROYECTO
    ========================================================= */
+
 .nuevo-proyecto{
     width: var(--ancho-predefinido);
     padding: 1rem;
@@ -227,19 +305,18 @@ body{
 }
 
 .nuevo-proyecto h2{
-    font-family: "Trebuchet MS", sans-serif;
-    font-size: 28px;
+    margin-bottom: 1rem;
+    font-size: 26px;
     font-weight: 700;
     color: var(--color-azulelectrico);
-    text-shadow: 0 2px 4px var(--color-grisazulado);
-    margin-bottom: 1rem;
 }
+
 .nuevo-proyecto p{
-    color: var(--color-grisazulado);
-    font-size: 16px;
-    line-height: 1.6;
     max-width: 600px;
     margin: 0 auto 1.5rem;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-grisazulado);
 }
 
 .boton-whatsapp{
@@ -247,14 +324,13 @@ body{
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.7rem 1.2rem;
-    color: var(--color-blancoelectrico);
-    font-family: "Trebuchet MS", sans-serif;
+    padding: 0.8rem 1.4rem;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
+    color: var(--color-blancoelectrico);
+    border: 2px solid var(--color-whatsapp);
     border-radius: 10px;
-    border: 2px solid var(--color-grisazulado)
 }
 
 .boton-whatsapp img{
@@ -262,15 +338,19 @@ body{
     height: 25px;
 }
 
+
 /* =========================================================
-   CUARTO BLOQUE -- CONTACTOS
+   CUARTO BLOQUE -- CONTACTOS (barra fija abajo)
    ========================================================= */
 
 .botones{
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
     gap: 2rem;
     padding: 0.7rem;
-    border-radius: 10px;
-    border-top: none;
+    border-radius: 10px 10px 0 0;
+    border-top: 1px solid var(--color-azultransparente);
 }
 
 .icono img{
